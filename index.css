@@ -2,6 +2,14 @@
 
 :root {
   --bg: linear-gradient(180deg, #6f00d4 20.83%, #5f00b5 80.73%);
+  --focus-ring-color: #e0e333;
+}
+
+:focus{
+  outline-color: transparent;
+  outline-style: solid; 
+  box-shadow: 0 0 0 3px rgb(0, 0, 0),
+    0 0 0 6px var(--focus-ring-color);
 }
 
 /* universal styles */
@@ -93,32 +101,6 @@ body {
   opacity: 1;
 }
 
-/* tooltip styles */
-
-.tooltip {
-  position: relative;
-
-  & .tooltip-content {
-    position: absolute;
-    text-align: center;
-    padding: 15px;
-    width: 320px;
-    display: none;
-    visibility: hidden;
-    left: 90px;
-    background-color: white;
-    font-weight: 300;
-    font-size: 15px;
-    border-radius: 5px;
-    line-height: 25px;
-  }
-}
-.tooltip:hover .tooltip-content {
-  visibility: visible;
-  background-color: white;
-  display: block;
-}
-
 /* navbar styles */
 
 .navbar {
@@ -127,6 +109,30 @@ body {
   justify-content: left;
   align-items: center;
   border: 0;
+  .tooltip {
+    position: relative;
+
+    & .tooltip-content {
+      position: absolute;
+      text-align: center;
+      padding: 15px;
+      width: 320px;
+      display: none;
+      visibility: hidden;
+      left: 90px;
+      background-color: white;
+      font-weight: 300;
+      font-size: 15px;
+      border-radius: 5px;
+      line-height: 25px;
+    }
+  }
+  .tooltip:hover .tooltip-content {
+    visibility: visible;
+    background-color: white;
+    display: block;
+  }
+
   & ul {
     display: flex;
     align-items: center;
